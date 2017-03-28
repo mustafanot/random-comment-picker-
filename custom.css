@@ -1,0 +1,65 @@
+nav {
+  /*background: rgb(205,32,31) ;*/
+  background-image: linear-gradient(to bottom, #e52d27, #b31217);
+}
+.btnsub {
+  background: rgb(205,32,31) ;
+}
+body {
+ 	display: flex;
+ 	min-height: 100vh;
+ 	flex-direction: column;
+}
+main {
+	flex: 1 0 auto;
+}
+.yt-card{
+  background: #3F51B5;
+}
+.yt-section{
+  background: #263238;
+}
+
+/* label color */
+ .input-field label {
+   color: #000000;
+ }
+ /* label focus color */
+ .input-field input[type=text]:focus + label {
+   color: #3949ab;
+ }
+ /* label underline focus color */
+ .input-field input[type=text]:focus {
+   border-bottom: 1px solid #3949ab;
+   box-shadow: 0 1px 0 0 #3949ab;
+ }
+ /* valid color */
+ .input-field input[type=text].valid {
+   border-bottom: 1px solid #3949ab;
+   box-shadow: 0 1px 0 0 #3949ab;
+ }
+ /* invalid color */
+ .input-field input[type=text].invalid {
+   border-bottom: 1px solid #F44336;
+   box-shadow: 0 1px 0 0 #F44336;
+ }
+ /* icon prefix focus color */
+ .input-field .prefix.active {
+   color: #3949ab;
+ }
+/*DATALOADER*/
+ .dataload {
+ 	display: flex;
+ 	align-items: center;
+ 	justify-content: center;
+ 	background-color: #212121;
+ 	position: fixed;
+ 	z-index: 100;
+ 	top: 0;
+ 	left: 0;
+ 	right: 0;
+ 	bottom: 0;
+ }
+.none{
+  display: none;
+}

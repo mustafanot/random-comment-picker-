@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <!-- StyleSheets -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Luckiest+Guy">
+  <link rel="stylesheet" href="materialize.min.css">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="custom.css">
+  <link rel="stylesheet" href="odo-default.css">
+  <meta name="theme-color" content="#CD201F">
+  <!-- JavaScript -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.4/numeral.min.js"></script>
+  <script src="materialize.min.js"></script>
+  <script src="lodash.js"></script>
+  <script src="odo.min.js"></script>
+</head>
+<body class="grey lighten-5">
+ <main>
+
+    <section class="yt-section white-text" style="padding-top:1px;">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m12 l12">
+            <h3 class="thin center">Randomly Pick A Comment From Any Youtube Video</h3>
+            <div class="card center" style="padding-top:1%;padding-bottom:1%;">
+              <form>
+                <div class="black-text input-field">
+                  <i class="material-icons prefix">link</i>
+                  <input class="black-text" id="dm-yturl" placeholder="Ex: https://www.youtube.com/watch?v=0vafw5O33zA" type="text" position:relative style="width:75%;" required>
+                  <button type="submit" class="waves-effect waves-light indigo darken-1 btn-floating btn-flat white-text" position:relative><i class="material-icons">done</i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row white-text">
+        <div class="col offset-l1 l2">
+          <div class="card yt-card animated fadeIn">
+            <div class="card-content">
+              <span class="card-title">Likes <i class="material-icons right">thumb_up</i></span>
+              <p class="flow-text odometer center" id="likes"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col l2">
+          <div class="card yt-card animated fadeIn">
+            <div class="card-content">
+              <span class="card-title">Dislikes <i class="material-icons right">thumb_down</i></span>
+              <p class="flow-text odometer center" id="dislikes"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col l2">
+          <div class="card yt-card animated fadeIn">
+            <div class="card-content">
+              <span class="card-title">Views <i class="material-icons right">visibility</i></span>
+              <p class="flow-text odometer" id="views"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col l2">
+          <div class="card yt-card animated fadeIn">
+            <div class="card-content">
+              <span class="card-title">Comments <i class="material-icons right">forum</i></span>
+              <p class="flow-text odometer center" id="comments"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col l2">
+          <div class="card yt-card animated fadeIn">
+            <div class="card-content">
+              <span class="card-title">Unique <i class="material-icons right">comment</i></span>
+              <p class="flow-text odometer" id="ukcomment"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="row">
+      <div class="col s6 m6 offset-l1 l4 none" id="VidThumb">
+        <div class="card yt-section animated fadeIn">
+          <div class="card-image">
+            <img src="" id="img" class="responsive-img">
+            <a class="btn-floating btn-large halfway-fab waves-effect waves-light red accent-4 tooltipped"  data-position="right" data-delay="30" data-tooltip="Play Video" id="url" target="_blank" rel="nofollow"><i class="material-icons">play_arrow</i></a>
+          </div>
+          <div class="card-action">
+            <center><a class="waves-effect waves-light white-text btn-flat btn-large" id="random">PICK A RANDOM COMMENT</a></center>
+          </div>
+        </div>
+      </div>
+      <div class="col l6 none" id="RandomComment">
+        <div class="card">
+          <div class="card-image">
+          </div>
+          <div class="card-content">
+            <div class="row">
+              <div class="col s2 center">
+                <img src="" alt="" id="winImg" class="circle responsive-img">
+              </div>
+              <div class="col s10 left">
+                <a href="" id="winUrl" target="_blank"><p class="flow-text" id="winName"></p></a>
+                <span class="black-text" id="winComment"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col l6 none" id="CommentLoading">
+        <div style="padding-top:15%;">
+          <h3 class="thin center">Loading Comments, Please Wait...</h3>
+          <div class="loadingcomments container">
+            <div class="progress blue darken-3">
+              <div class="indeterminate blue"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col l6 none" id="CommentLoaded">
+        <div style="padding-top:15%;">
+          <h3 class="thin center">Comments Loaded!</h3>
+          <p class="flow-text center">You Can Now Pick A Random Comment!</p>
+        </div>
+      </div>
+  </div>
+    </main>
+
+    <script>
+    $(".button-collapse").sideNav();
+    $('.modal').modal();
+    </script>
+    <script src="rcpMain.js">
+      
+    </script>
+    <!-- <script src="test.js"></script> -->
+  </body>
+  </html>
