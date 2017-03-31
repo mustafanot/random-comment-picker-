@@ -112,6 +112,7 @@ $(document).ready(function(){
         }}
         $.getJSON(api, call);
     });
+
     $('#random').click(function(evt){
         evt.preventDefault();
         $('#CommentLoaded').fadeOut(100, function() {
@@ -127,4 +128,41 @@ $(document).ready(function(){
         var imgUrls = item.authorProfileImageUrl + '?size=100';
         $('#winImg').attr('src', imgUrls);
 });
+
+
+    $('#best').click(function(evt){
+    	var best = 0;
+		for (var i = snip.length - 1; i >= 0; i--) {
+	    	if (snip[i].likeCount > snip[best].likeCount) {
+	    		best = i;
+	    	}
+	    }
+	    snip_best = snip[best];
+
+
+        evt.preventDefault();
+        $('#CommentLoaded').fadeOut(100, function() {
+          $(this).addClass('none');
+        });
+		 $('#RandomComment').fadeOut(100, function() {
+	          $(this).addClass('none');
+        });
+        $('#bestComment').delay(200).fadeIn(200, function() {
+          $(this).removeClass('none');
+        });
+        $('#bestwinName').html(snip_best.authorDisplayName);
+        $('#bestwinComment').html(snip_best.textDisplay);
+        $('#bestwinUrl').attr('href', snip_best.authorChannelUrl);
+        var imgUrls = snip_best.authorProfileImageUrl + '?size=100';
+        $('#bestwinImg').attr('src', imgUrls);
+});
+
+
+
+
+
+
     });
+
+
+
