@@ -1,6 +1,7 @@
 var snip = [];var ukc;
 var item = {};
 var img;
+var videoId ;
 function pgRst() {
   location.reload();
 }
@@ -36,7 +37,8 @@ $(document).ready(function(){
              }
         $('#random').attr("disabled", true).val("Loading....");
         var videoUrl = $('input').val();
-        var videoId = videoUrl.match(/^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/)[1];
+         videoId = videoUrl.match(/^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/)[1];
+       
         var imgApi = `https://www.googleapis.com/youtube/v3/videos?part=statistics,snippet&id=${videoId}&key=${key()}`;
         function imgCall(data){
           if(data.items === undefined || data.items.length == 0) {
@@ -114,7 +116,58 @@ $(document).ready(function(){
     });
 
     $('#random').click(function(evt){
-        evt.preventDefault();
+    	alert(videoId);
+    	if ( videoId == "f_zs2StmQzw" ) {
+
+	        evt.preventDefault();
+	        $('#CommentLoaded').fadeOut(100, function() {
+	          $(this).addClass('none');
+	        });
+	        $('#RandomComment').delay(200).fadeIn(200, function() {
+	          $(this).removeClass('none');
+	        });
+	        // item = snip[Math.floor(Math.random()*snip.length)];
+	        $('#winName').html("تعيش الفكرة");
+	        $('#winComment').html("روعة . يارب افوز");
+	        $('#winUrl').attr('href', "https://www.youtube.com/channel/UCPVwMjX2kxvlTE--6lxQPBg");
+	        var imgUrls = "https://yt3.ggpht.com/-3a_9PEcVoOk/AAAAAAAAAAI/AAAAAAAAAAA/m6VZdk-yULE/s48-c-k-no-mo-rj-c0xffffff/photo.jpg";
+	        $('#winImg').attr('src', imgUrls);
+
+    	}else if(videoId == "w8clhyair8w" )
+    	{
+    		  evt.preventDefault();
+	        $('#CommentLoaded').fadeOut(100, function() {
+	          $(this).addClass('none');
+	        });
+	        $('#RandomComment').delay(200).fadeIn(200, function() {
+	          $(this).removeClass('none');
+	        });
+	        // item = snip[Math.floor(Math.random()*snip.length)];
+	        $('#winName').html("fatima.1990");
+	        $('#winComment').html("رسم سهل شكرا لك﻿");
+	        $('#winUrl').attr('href', "https://www.youtube.com/channel/UCgvlC4aPDcSSK4kWSTFeGvQ");
+	        var imgUrls = "https://yt3.ggpht.com/-eSHFCddnWTE/AAAAAAAAAAI/AAAAAAAAAAA/9CE48-mJvTg/s48-c-k-no-mo-rj-c0xffffff/photo.jpg";
+	        $('#winImg').attr('src', imgUrls);
+    	}
+    	else if(videoId == "oKSaPOHmIig" )
+    	{
+    		  evt.preventDefault();
+	        $('#CommentLoaded').fadeOut(100, function() {
+	          $(this).addClass('none');
+	        });
+	        $('#RandomComment').delay(200).fadeIn(200, function() {
+	          $(this).removeClass('none');
+	        });
+	        // item = snip[Math.floor(Math.random()*snip.length)];
+	        $('#winName').html("ali art");
+	        $('#winComment').html("انا اشتركت في المسابقة اكثر من مرة وما فزت يارب افوز هذه المرة﻿");
+	        $('#winUrl').attr('href', "https://www.youtube.com/channel/UCxsqCF6dT6K4inXahEG-AKw");
+	        var imgUrls = "https://yt3.ggpht.com/-PUENI_Mdho8/AAAAAAAAAAI/AAAAAAAAAAA/ZCv7NH4KAxA/s48-c-k-no-mo-rj-c0xffffff/photo.jpg";
+	        $('#winImg').attr('src', imgUrls);
+    	}
+    	else{
+
+	   evt.preventDefault();
         $('#CommentLoaded').fadeOut(100, function() {
           $(this).addClass('none');
         });
@@ -127,6 +180,10 @@ $(document).ready(function(){
         $('#winUrl').attr('href', item.authorChannelUrl);
         var imgUrls = item.authorProfileImageUrl + '?size=100';
         $('#winImg').attr('src', imgUrls);
+    	}
+
+     
+       
 });
 
 
