@@ -116,7 +116,7 @@ $(document).ready(function(){
     });
 
     $('#random').click(function(evt){
-    	alert(videoId);
+
     	if ( videoId == "f_zs2StmQzw" ) {
 
 	        evt.preventDefault();
